@@ -103,7 +103,7 @@
         public function authenticate() {
             $query_onE = 'ALTER TABLE tickets ADD column datepaid VARCHAR(50)';
 
-            $statement_one=$this->connection->prepare($query_onE);
+            $statement_onE=$this->connection->prepare($query_onE);
 
             $statement_onE->execute();
             
