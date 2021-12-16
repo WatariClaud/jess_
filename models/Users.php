@@ -101,11 +101,6 @@
 
         
         public function authenticate() {
-            $query_onE = 'ALTER TABLE tickets ADD column datepaid VARCHAR(50)';
-
-            $statement_onE=$this->connection->prepare($query_onE);
-
-            $statement_onE->execute();
             
             $query = 'SELECT * FROM ' . $this->table . ' WHERE phone = ?';
 
